@@ -1,0 +1,119 @@
+def show_menu():
+    print(" _____ _            _                 _    ____                   _")
+    print("| ____| | ___ _ __ | |__   __ _ _ __ | |_ /  __| ___  _   _ _ __ | |_ ___ _ __")
+    print("|  _| | |/ _ \\ '_ \\| '_ \\ / _' | '_ \\| __|  |   / _ \\| | | | '_ \\| __/ _ \\ '__|")
+    print("| |___| | ___/ |_) | | | | (_| | | | | |_|  |__| (_) | |_| | | | | ||  __/ |")
+    print("|_____|_|\\___| .__/|_| |_|\\__,_|_| |_|\\__|\\____|\\___/\\___,_|_| |_|\\__\\___|_|")
+    print("              |_|", '\n')
+    print("<------------------------------------Головне меню---------------------------------------------->")
+    print("|                         / /=============================\ \                                  |")
+    print("|                             На яку версію вам потрібно?                                      |")
+    print("|                         \ \=============================/ /                                  |")
+    print("|                                                                                              |")
+    print("|[1] - Elephant Counter v1.0                                                                   |")
+    print("|[2] - Elephant counter v2.0                                                                   |")
+    print("|[3] - Elephant counter v3.0 Premium Deluxe Edition                                            |")
+    print("|[4] - Elephant counter v3.0 Counter Starter Edition                                           |")
+    print("|[5] - Elephant Counter v4.0 Premium Deluxe Edition                                            |")
+    print("|[6] - Elephant Counter v.5.0 Ultimate International Premium Deluxe Edition                    |")
+    print("|[7] - Вихід                                                                                    |")
+    print("<------------------------------------------------------------------------------------------------>\n")
+
+while True:
+    show_menu()
+    choice = input("Оберіть версію (1–7): ")
+
+    if choice == "1":
+        print("Elephant counter v1.0")
+        for i in range(10):
+            print(i)
+
+    elif choice == "2":
+        print("Elephant counter v2.0")
+        n = int(input("Скільки слоненят рахувати: "))
+        for i in range(n + 1):
+            print(i)
+
+    elif choice == "3":
+        print("Elephant counter v3.0 Premium Deluxe Edition")
+        n = int(input("Скільки слоненят рахувати: "))
+        for i in range(n + 1):
+            print(" _________")
+            print(f"<____{i}____>")
+            print(" _ _/__")
+            print("/ |..| \\ ")
+            print("\\  || \\/ ")
+            print(" |_  _| ")
+
+    elif choice == "4":
+        print("Elephant counter v3.0 Counter Starter Edition")
+        n = int(input("Скільки слоненят рахувати: "))
+        if n > 100:
+            print("🔒 Це Starter Edition. Для рахування понад 100 слоненят придбайте Elephant Counter PRO всього за 99,99₴!")
+            n = 100
+        for i in range(n + 1):
+            last_two = i % 100
+            last_digit = i % 10
+            if i == 42:
+                print("42 слоненяти — відповідь на головне питання життя, всесвіту і всього такого.")
+            elif 11 <= last_two <= 14:
+                print(f"{i} слоненят")
+            elif last_digit == 1:
+                print(f"{i} слоненя")
+            elif 2 <= last_digit <= 4:
+                print(f"{i} слоненяти")
+            else:
+                print(f"{i} слоненят")
+        if n == 1:
+            print("Серйозно? Один слоненя? Це точно тобі допоможе заснути? 🐘💤")
+        elif n == 100:
+            print("Ого, 100 слоненят. Ти або дуже втомлений, або на межі божевілля. Удачі!")
+
+    elif choice == "5":
+        print("Elephant Counter v4.0 Premium Deluxe Edition")
+        n = int(input("Скільки слоненят показати? "))
+        for i in range(1, n + 1):
+            s = '/' * i
+            bs = '\\' * i 
+            b = '|' * i
+
+            print(" _ ___")
+            print(f"{s} |..| \\ ")
+            print(f"{bs}  || \\/ ")
+            print(f" {b}_  _|")
+
+    elif choice == "6":
+        print("Elephant Counter v.5.0 Ultimate International Premium Deluxe Edition")
+        animal = input("Яку тварину будемо рахувати (слоненя / кішка)? ").strip().lower()
+        n = int(input("Скільки будемо їх рахувати? "))
+
+        if animal == "слоненя":
+            for i in range(1, n + 1):
+                slashes = '/' * i
+                backslashes = '\\' * i
+                bars = '|' * i
+
+                print(" _ ___")
+                print(f"{slashes} |..| \\ ")
+                print(f"{backslashes}  || \\/ ")
+                print(f" {bars}_  _|")
+
+        elif animal == "кішка":
+            for j in range(1, n + 1):
+                whiskers = '~' * j
+                tail = ">" + "=" * j
+                print("  /\\_/\\ ")
+                print(" ( o.o )")
+                print(f"{whiskers}| ^ |{whiskers}")
+                print(f"   {tail}")
+
+        else:
+            print("Таких тварин у нас немає :( Але скоро буде! 🦄")
+
+    elif choice == "7":
+        print("Дякуємо за користування Elephant Counter v5.0 U.I.P.D.E. 😄 До зустрічі!")
+        break
+
+    else:
+        print("❗ Невірний вибір. Введіть число від 1 до 7.")
+
